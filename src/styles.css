@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url('https://thumbs.dreamstime.com/z/vegetarian-food-health-diet-nutrition-background-variety-fresh-farm-vegetables-around-blank-white-chalkboard-top-62732964.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

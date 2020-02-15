@@ -1,0 +1,41 @@
+<div class="login">
+  <form class="login-page" >
+
+
+    <h1 *ngIf="!isRegistration">Login</h1>
+    <h1 *ngIf="isRegistration">Register</h1>
+    <br>
+    <div class="login-field">
+      <table>
+        <tr *ngIf="isRegistration">
+          <td>  <label for="Name"><b>Name</b></label></td>
+          <td> <input type="text" placeholder="Enter Name" name="name" required [(ngModel)]="Nme"></td>
+        </tr>
+        <tr>
+          <td> <label for="Email-ID"><b>Email-ID</b></label></td>
+          <td> <input type="email" placeholder="Enter Email" name="email-id"  required [(ngModel)]="EmailId"></td>
+        </tr>
+        <tr>
+
+          <td> <label for="psw"><b>Password</b></label></td>
+          <td> <input type="password" placeholder="Enter Password" name="psw" required [(ngModel)]="pswd"></td>
+        </tr>
+        <tr *ngIf="isRegistration">
+
+          <td> <label for="reenter-psw"><b>Re-enter Password</b></label></td>
+          <td> <input type="password" placeholder="Re-enter Password" name="re-enter-psw" required [(ngModel)]="repswd"></td>
+        </tr><br>
+        <tr><td></td>
+          <td *ngIf="!isRegistration"><button type="submit" class="loginbtn" (click)="onLogin()" >Login</button></td>
+          <td *ngIf="isRegistration"><button type="submit" class="registerbtn" (click)="onRegister()" >Register</button></td>
+        </tr>
+      </table>`
+    </div>
+
+    <div >
+      <p *ngIf="!isRegistration">Don't have an account? <a (click)="isRegistration = !isRegistration">Register</a>.</p>
+      <p *ngIf="isRegistration">Registered User? <a (click)="isRegistration= !isRegistration">Login</a>.</p>
+    </div>
+  </form>
+</div>
+

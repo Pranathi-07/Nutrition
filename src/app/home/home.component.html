@@ -1,0 +1,24 @@
+<div class="main">
+  <h1>Welcome to App</h1>
+  <div class="search-form">
+    <input type="text" placeholder="Search.." [(ngModel)]="searchTerm" name="search" required="Enter an item to search">
+    <button type="submit"><i class="fa fa-search" (click)="getNutritionDetails()"></i></button>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=hJ08NhOU"></script>
+  </div>
+  <div class="result-container" *ngIf="nutritionData">
+    <h3>Results:</h3>
+
+
+        <p>Item Name : {{nutritionData.item_name}}</p>
+       <p>Calories : {{nutritionData.nf_calories}}</p>
+       <p>Protein : {{nutritionData.nf_protein}}</p>
+       <p>Serving Weight in grams : {{nutritionData.nf_serving_weight_grams}}</p>
+       <p>cholesterol : {{nutritionData.nf_cholesterol}}</p>
+       <p>Total Carbohydrate : {{nutritionData.nf_total_carbohydrate}}</p>
+       <p>sugars : {{nutritionData.nf_sugars}}</p>
+       <p>Total fats : {{nutritionData.nf_total_fat}}</p>
+       <p>Fiber : {{nutritionData.nf_dietary_fiber}}</p>
+
+
+  </div>
+</div>
