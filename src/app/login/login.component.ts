@@ -30,26 +30,26 @@ public Nme: string;
 }
 
 onRegister() {
-  if (this.Nme === '') {
+  if (!this.Nme) {
     alert('Name must be filled out');
   }
-  if (this.EmailId === '') {
+  if (!this.EmailId) {
     alert('Email must be filled out');
   }
-  if (this.pswd === '' ) {
+  if (!this.pswd) {
     alert('Enter Password');
   }
   if (this.repswd !== this.pswd )  {
     alert('passwords should match');
-  }
-  const userObject = {
-    firstName : this.Nme,
-    emailId : this.EmailId,
-    password: this.pswd
-  };
-  this.users.push(userObject);
-  localStorage.setItem('User', JSON.stringify(this.users));
-  this.router.navigate((['/home']));
+    const userObject = {
+      firstName : this.Nme,
+      emailId : this.EmailId,
+      password: this.pswd
+    };
+    this.users.push(userObject);
+    localStorage.setItem('User', JSON.stringify(this.users));
+    this.router.navigate((['/home']));
 //  alert('user registered');
+  }
 }
 }
